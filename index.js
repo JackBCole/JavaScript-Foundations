@@ -6,9 +6,8 @@
 
 let name = 'jack';
 let principal = 200000;
-let P = principal;
 let interestRate = 0.05;
-let I = interestRate;
+
 let years = 30;
 
 // 🏡 Task 1.5: Simple Math
@@ -20,7 +19,6 @@ let years = 30;
 
 let monthlyInterestRate = interestRate / 12;
 periods = years * 12; 
-let N = periods;
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers. Save the final value into a variable called monthlyRate. 
@@ -39,13 +37,11 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
+let n1 = Math.pow(1 + monthlyInterestRate, periods);
+let numerator = n1 * monthlyInterestRate;
+let denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+let monthlyRate = principal * numerator / denominator;
 
-let n1 = Math.pow(1 + I, N);
-let n2 = n1 * I;
-let numerator =  n1 * n2;
-let denominator = n1 - 1;
-let monthlyRate = numerator/denominator;
-let M = monthlyRate;
 
 
 
@@ -54,10 +50,11 @@ let M = monthlyRate;
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+ function mortgageCalculator(){
 
-
-
-
+     console.log(name + ', your monthly rate is ' + monthlyRate);
+ }
+ return mortgageCalculator();
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
