@@ -63,8 +63,12 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 function yourRate(P, I, N){
    
-   let yourRate = P * n1 * monthlyInterestRate / Math.pow(1 + monthlyInterestRate, periods) - 1;
-   return yourRate;
+   let yourPrincipalRate = P * n1 * monthlyInterestRate / Math.pow(1 + monthlyInterestRate, periods) - 1;
+   return yourPrincipalRate;
+   let yourInterestRate = I = interestRate;
+   return yourInterestRate 
+   let yourPeriods = N = periods;
+   return;
  }
  console.log(mortgageCalculator(200000, 0.05, 30));
 
