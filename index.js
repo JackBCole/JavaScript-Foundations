@@ -44,28 +44,29 @@ let monthlyRate = principal * numerator / denominator;
 
 
 
-
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
  function mortgageCalculator(){
-
-     console.log(name + ', your monthly rate is ' + monthlyRate);
+   
+   return (`${name}, your monthly rate is ${monthlyRate}`);
  }
- return mortgageCalculator();
-
+ 
+const monthlyRateString = mortgageCalculator();
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
 
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
-
-
-
-
+function yourRate(P, I, N){
+   
+   let yourRate = P * n1 * monthlyInterestRate / Math.pow(1 + monthlyInterestRate, periods) - 1;
+   return yourRate;
+ }
+ console.log(mortgageCalculator(200000, 0.05, 30));
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
@@ -74,6 +75,8 @@ Then, add control flow within your function such that IF creditScore is above 74
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
+
+
 
 
 
