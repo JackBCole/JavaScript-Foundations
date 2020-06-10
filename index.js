@@ -70,9 +70,9 @@ function yourRate(P, I, N){
 
     monthlyRate = P * ( Math.pow(1 + I, N)* I) / (Math.pow(1 + I, N) - 1); 
 
-   return P, I, N;
+   return (`${name}, your monthly rate is ${Math.round(monthlyRate)}`);
  }
- const yourMonthlyRate = yourRate();
+
  console.log(mortgageCalculator(200000, 0.05, 30));
  console.log(yourRate(200000, 0.05, 30));
 // 🏡 Task 5: Conditionals
@@ -89,28 +89,23 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
    var I = 0.05 / 12;
    var N = 30 * 12;
    var creditScore = 750;
-
-   monthlyRate = P * n1 * monthlyInterestRate / Math.pow(1 + monthlyInterestRate, periods) - 1;
- 
-   
+   monthlyRate = P * ( Math.pow(1 + I, N)* I) / (Math.pow(1 + I, N) - 1);
 
    if(creditScore <= 800 && creditScore >= 0 ){
-      return creditScore
-   }else if(creditScore > 800 && creditScore < 0){
-      console.log('your creditscore is invalid')
+      creditScore + 1 - 1;
+   }else if(creditScore > 800 || creditScore < 0){
+      console.log('your creditscore is invalid');
+   }else if(creditScore >= 660 && creditScore <= 740){
+      monthlyRate * 1.00;
    }else if(creditScore > 740){
-      monthlyRate * 0.95
+      monthlyRate * 0.95;
    }else(creditScore < 660)
    {
-      monthlyRate * 1.05
+      monthlyRate * 1.05;
    }
-   
-
+   console.log(monthlyRate)
  }
- console.log(yourRate(200000, 0.05, 30, 750));
-
-
-
+   
 
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
@@ -127,7 +122,16 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+function variableInterestRate(){
+   monthlyRate = P * n1 * monthlyInterestRate / Math.pow(1 + monthlyInterestRate, periods) - 1;
 
+   for(monthlyRate; monthlyRate <= 10; monthlyInterestRate++){
+      monthlyInterestRate + .2 || - .2;
+   }
+   return (`${name}, with an interest rate of ${monthlyInterestRate}, your monthly rate is ${monthlyRate}`);
+
+ }
+console.log(variableInterestRate());
 
 
 
