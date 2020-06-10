@@ -18,7 +18,7 @@ let years = 30;
 */
 
 let monthlyInterestRate = interestRate / 12;
-periods = years * 12; 
+periods = 30 * 12; 
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers. Save the final value into a variable called monthlyRate. 
@@ -51,7 +51,7 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 */
  function mortgageCalculator(){
    
-   return (`${name}, your monthly rate is ${monthlyRate}`);
+   return (`${name}, your monthly rate is ${Math.round(monthlyRate)}`);
  }
  
 const monthlyRateString = mortgageCalculator();
@@ -61,17 +61,20 @@ const monthlyRateString = mortgageCalculator();
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
+//M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 function yourRate(P, I, N){
    
-   let yourPrincipalRate = P * n1 * monthlyInterestRate / Math.pow(1 + monthlyInterestRate, periods) - 1;
-   return yourPrincipalRate;
-   let yourInterestRate = I = interestRate;
-   return yourInterestRate 
-   let yourPeriods = N = periods;
-   return;
- }
- console.log(mortgageCalculator(200000, 0.05, 30));
+    var P = 200000; 
+    var I = 0.05 / 12;
+    var N = 30 * 12;
 
+    monthlyRate = P * ( Math.pow(1 + I, N)* I) / (Math.pow(1 + I, N) - 1); 
+
+   return P, I, N;
+ }
+ const yourMonthlyRate = yourRate();
+ console.log(mortgageCalculator(200000, 0.05, 30));
+ console.log(yourRate(200000, 0.05, 30));
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
@@ -80,7 +83,31 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
+  yourRate(P, I, N, creditScore)
+  {
+   var P = 200000; 
+   var I = 0.05 / 12;
+   var N = 30 * 12;
+   var creditScore = 750;
 
+   monthlyRate = P * n1 * monthlyInterestRate / Math.pow(1 + monthlyInterestRate, periods) - 1;
+ 
+   
+
+   if(creditScore <= 800 && creditScore >= 0 ){
+      return creditScore
+   }else if(creditScore > 800 && creditScore < 0){
+      console.log('your creditscore is invalid')
+   }else if(creditScore > 740){
+      monthlyRate * 0.95
+   }else(creditScore < 660)
+   {
+      monthlyRate * 1.05
+   }
+   
+
+ }
+ console.log(yourRate(200000, 0.05, 30, 750));
 
 
 
